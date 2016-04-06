@@ -1,11 +1,28 @@
 package jp.hideakisago.resultlistener;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 public class ResultListeners {
 
     /** onResult の listener 一覧。 */
     private final ArrayList<OnResultListener<?>> mOnResultListeners = new ArrayList<>();
+
+    /**
+     * listener を登録します。
+     */
+    public void registerAll(Object owner) {
+        try {
+            for (Field field : owner.getClass().getDeclaredFields()) {
+                if (field.getType().isAssignableFrom(OnResultListener.class)) {
+                    field.setAccessible(true);
+                    register((OnResultListener<?>) field.get(owner));
+                }
+            }
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     /**
      * listener を登録します。
