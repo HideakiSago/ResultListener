@@ -41,8 +41,7 @@ public class ResultListeners {
             throw new IllegalArgumentException("args:listener must be non-null");
         }
         if (mOnResultListeners.contains(listener)) {
-            throw new IllegalArgumentException(
-                    "Already registered the same listener. " + listener);
+            return;
         }
 
         mOnResultListeners.add(listener);
