@@ -26,7 +26,7 @@ public class ResultListeners {
                 }
             }
         } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
+            throw new InternalError(e.getMessage());
         }
     }
 
