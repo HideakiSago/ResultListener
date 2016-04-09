@@ -49,6 +49,7 @@ public class ResultListeners {
      *
      * @param listener 取得したい request code に対する listener です。
      * @return 引数で指定された listener に対する request code を返します。
+     * 該当の listener が登録されていない場合は {@code -1} を返却します。
      */
     public int requestCodeOf(OnResultListener<?> listener) {
         return mOnResultListeners.indexOf(listener);
