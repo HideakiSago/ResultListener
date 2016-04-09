@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ResultListener.iml" filepath="$PROJECT_DIR$/ResultListener.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/resultlistener/resultlistener.iml" filepath="$PROJECT_DIR$/resultlistener/resultlistener.iml" />
+      <module fileurl="file://$PROJECT_DIR$/resultlistener-sample/resultlistener-sample.iml" filepath="$PROJECT_DIR$/resultlistener-sample/resultlistener-sample.iml" />
     </modules>
   </component>
 </project>
