@@ -1,6 +1,8 @@
 package jp.hideakisago.resultlistener;
 
 import android.support.annotation.Nullable;
+import android.support.annotation.VisibleForTesting;
+
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
@@ -70,5 +72,10 @@ public class ResultListeners {
         //noinspection unchecked
         OnResultListener<Result> listener = (OnResultListener<Result>) mOnResultListeners.get(requestCode);
         listener.onResult(resultCode, resultObject);
+    }
+
+    @VisibleForTesting
+    /* package */int getNumListeners() {
+        return mOnResultListeners.size();
     }
 }
