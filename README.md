@@ -43,3 +43,4 @@ build.gradle 未対応
 
 - **Caution:** Listener はすべて field に保持しなければいけません。 仕組み上、匿名 class は期待するような動きをしません。
 - 上記の例では result の型を `Bundle` として扱っていますが、 `Intent` でも構いませんし、うまく設計して POJO にしても構いません。
+- Lambda 式を使えるようにし、 listener は method 参照することをおすすめします。
