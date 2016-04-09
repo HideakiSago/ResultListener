@@ -66,7 +66,7 @@ public class ResultListeners {
     public <Result> void notifyResult(
             int requestCode, int resultCode, @Nullable Result resultObject) {
         if (requestCode < 0) {
-            throw new IllegalArgumentException("args:requestCode(" + requestCode + ") must be specified the positive");
+            return;
         }
         if (mOnResultListeners.size() <= requestCode) {
             throw new IllegalStateException("listener of the specified args:requestCode(" + requestCode + ") is not registered");
