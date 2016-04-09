@@ -12,6 +12,9 @@ public class ResultListeners {
      * listener を登録します。
      */
     public void registerAll(Object owner) {
+        if (owner == null) {
+            throw new IllegalArgumentException("args:owner must be non-null");
+        }
         try {
             for (Field field : owner.getClass().getDeclaredFields()) {
                 if (field.getType().isAssignableFrom(OnResultListener.class)) {
@@ -30,6 +33,9 @@ public class ResultListeners {
      * @param listener 登録する listener です。
      */
     public void register(OnResultListener<?> listener) {
+        if (listener == null) {
+            throw new IllegalArgumentException("args:listener must be non-null");
+        }
         if (mOnResultListeners.contains(listener)) {
             throw new IllegalArgumentException(
                     "Already registered the same listener. " + listener);
