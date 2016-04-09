@@ -1,5 +1,7 @@
 package jp.hideakisago.resultlistener;
 
+import android.support.annotation.IntRange;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.VisibleForTesting;
 
@@ -14,10 +16,7 @@ public class ResultListeners {
     /**
      * listener を登録します。
      */
-    public void registerAll(Object owner) {
-        if (owner == null) {
-            throw new IllegalArgumentException("args:owner must be non-null");
-        }
+    public void registerAll(@NonNull Object owner) {
         try {
             for (Field field : owner.getClass().getDeclaredFields()) {
                 field.setAccessible(true);
@@ -36,10 +35,7 @@ public class ResultListeners {
      *
      * @param listener 登録する listener です。
      */
-    public void register(OnResultListener<?> listener) {
-        if (listener == null) {
-            throw new IllegalArgumentException("args:listener must be non-null");
-        }
+    public void register(@NonNull OnResultListener<?> listener) {
         if (mOnResultListeners.contains(listener)) {
             return;
         }
@@ -54,6 +50,7 @@ public class ResultListeners {
      * @return 引数で指定された listener に対する request code を返します。
      * 該当の listener が登録されていない場合は {@code -1} を返却します。
      */
+    @IntRange(from = 0)
     public int requestCodeOf(OnResultListener<?> listener) {
         return mOnResultListeners.indexOf(listener);
     }
