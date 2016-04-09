@@ -69,7 +69,7 @@ public class ResultListeners {
             return;
         }
         if (mOnResultListeners.size() <= requestCode) {
-            throw new IllegalStateException("listener of the specified args:requestCode(" + requestCode + ") is not registered");
+            return;
         }
 
         //noinspection unchecked
