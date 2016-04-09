@@ -18,9 +18,10 @@ public class ResultListeners {
         }
         try {
             for (Field field : owner.getClass().getDeclaredFields()) {
-                if (field.getType().isAssignableFrom(OnResultListener.class)) {
-                    field.setAccessible(true);
-                    register((OnResultListener<?>) field.get(owner));
+                field.setAccessible(true);
+                Object fieldInstance = field.get(owner);
+                if (fieldInstance instanceof OnResultListener<?>) {
+                    register((OnResultListener<?>) fieldInstance);
                 }
             }
         } catch (IllegalAccessException e) {
