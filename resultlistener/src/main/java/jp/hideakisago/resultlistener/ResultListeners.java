@@ -1,5 +1,6 @@
 package jp.hideakisago.resultlistener;
 
+import android.support.annotation.Nullable;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
@@ -64,7 +65,7 @@ public class ResultListeners {
      * @param <Result> Result object の型です。
      */
     public <Result> void notifyResult(
-            int requestCode, int resultCode, Result resultObject) {
+            int requestCode, int resultCode, @Nullable Result resultObject) {
         //noinspection unchecked
         OnResultListener<Result> listener = (OnResultListener<Result>) mOnResultListeners.get(requestCode);
         listener.onResult(resultCode, resultObject);
