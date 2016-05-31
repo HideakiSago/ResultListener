@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import jp.hideakisago.resultlistener.OnResultListener;
-import jp.hideakisago.resultlistener.ResultListeners;
+import jp.sago.resultlistener.OnResultListener;
+import jp.sago.resultlistener.ResultListeners;
 
 public abstract class AbsActivity extends AppCompatActivity {
 

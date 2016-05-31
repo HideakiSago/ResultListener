@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import jp.hideakisago.resultlistener.OnResultListener;
+import jp.sago.resultlistener.OnResultListener;
 
 public class MainActivity extends AbsActivity {
 

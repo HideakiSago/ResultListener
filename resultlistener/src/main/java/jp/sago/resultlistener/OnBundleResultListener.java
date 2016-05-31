@@ -1,4 +1,4 @@
-package jp.hideakisago.resultlistener;
+package jp.sago.resultlistener;
 
 import android.os.Bundle;
 
